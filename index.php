@@ -15,6 +15,5 @@
         echo "This is a simple PHP script running successfully!\n";
         echo "My name is sajla Roy";
     ?>
-
 </body>
 </html>
