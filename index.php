@@ -40,17 +40,61 @@
         $allBooks = [
             [
                 'name'=>'Bangla',
-                'url'=> 'https://github.com/sajalroy2020'
+                'url'=> 'https://github.com/sajalroy2020',
+                'author'=> 'Sajal Roy'
             ],
             [
                 'name'=>'English',
-                'url'=> 'https://github.com/sajalroy2020'
+                'url'=> 'https://github.com/sajalroy2020',
+                'author'=> 'Cokkhi Yuo'
             ],
         ]
     ?>
 
     <ul>
         <?php foreach ($allBooks as $key => $book): ?> 
+            <li>
+                <a href="<?php echo $book['url']; ?>"><?php echo $book['name']; ?></a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+
+
+    <!-- Functions and Filters  -->
+    <?php 
+        $authorBooks = [
+            [
+                'name'=>'Bangla',
+                'url'=> 'https://github.com/sajalroy2020',
+                'author'=> 'Sajal Roy'
+            ],
+            [
+                'name'=>'English',
+                'url'=> 'https://github.com/sajalroy2020',
+                'author'=> 'Cokkhi Yuo'
+            ],
+            [
+                'name'=>'Math',
+                'url'=> 'https://github.com/sajalroy2020',
+                'author'=> 'Hiuo Yuo'
+            ],
+        ];
+
+        function filterAuthorName($books, $author){
+            $filterBook = [];
+
+            foreach ($books as $value) {
+                if ($value['author'] === $author) {
+                    $filterBook[] = $value;
+                }
+            }
+
+            return $filterBook;
+        }
+    ?>
+
+    <ul>
+        <?php foreach (filterAuthorName($authorBooks, 'Sajal Roy') as $book): ?>
             <li>
                 <a href="<?php echo $book['url']; ?>"><?php echo $book['name']; ?></a>
             </li>
