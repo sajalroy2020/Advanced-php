@@ -102,5 +102,15 @@
     </ul>
 
 
+    <!-- PHP-তে Lambda Function (বা Anonymous Function)  callback function -->
+    <?php
+        $myFunction = function($name) {
+        return "Hello, $name!";
+        };
+
+        echo $myFunction("Sajal");
+    ?>
+    <!-- এখানে function($name) {...} একটি নামবিহীন function, যেটি $myFunction নামক ভ্যারিয়েবলে assign করা হয়েছে। -->
+
 </body>
 </html>
